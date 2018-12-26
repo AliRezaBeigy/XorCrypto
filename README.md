@@ -1,2 +1,2 @@
 # Done !
-It was too difficault :-(
+It was too difficult :-(
