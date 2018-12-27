@@ -25,10 +25,17 @@ public class XorCrypto {
     }
 
     static String xor(String input, String key) {
-        String result = input;
-        // Compelet it
-        // help : r = (char)(i ^ k);
-        return result;
+        
+        String result = "" ;
+        int x=0 , y=0 ;
+        while(x<input.length()){
+            try {
+            char C = (char) (input.charAt(x) ^ key.charAt(y)) ; x++ ; y++ ;
+            result += C ;
+            }
+            catch(java.lang.StringIndexOutOfBoundsException e){ key += key ; }
+        }
+        return result ;
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////
