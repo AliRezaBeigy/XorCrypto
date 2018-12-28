@@ -1,3 +1,6 @@
+
+import java.util.Base64;
+
 package xorcrypto;
 
 public class XorCrypto {
@@ -25,9 +28,19 @@ public class XorCrypto {
     }
 
     static String xor(String input, String key) {
-        String result = input;
+String result="";        
         // Compelet it
         // help : r = (char)(i ^ k);
+        while (key.length() < input.length()/2) {
+        key += key;
+    }
+  for (int i=0;i<input.length();i+=2) {
+        String h = input.substring(i, i+2);
+        int v1 = Integer.parseInt(h, 16);
+        int v2 = key.charAt(i/2);
+        int xor = v1 ^ v2;
+  result += (char)(xor);
+  }
         return result;
     }
 
