@@ -26,10 +26,8 @@ public class XorCrypto {
 
     static String xor(String input, String key) {
         String result = "";
-        int i = 0;
-        for (; i < input.length(); i++){
+        for (int i = 0; i < input.length(); i++)
             result = result + (char)(input.charAt(i) ^ key.charAt(i%key.length()));
-        }
         return result;
     }
 
