@@ -1,4 +1,4 @@
-package xorcrypto;
+//package xorcrypto;
 
 public class XorCrypto {
 
@@ -16,18 +16,18 @@ public class XorCrypto {
 
     static String encrypt(String plainText, String key) {
         String result = xor(plainText, key);
-        return Base64.encrypt(result);
+        return Base64Crypto.encrypt(result);
     }
 
     static String decrypt(String base64, String key) {
-        String result = xor(Base64.decrypt(base64), key);
+        String result = xor(Base64Crypto.decrypt(base64), key);
         return result;
     }
 
     static String xor(String input, String key) {
-        String result = input;
-        // Compelet it
-        // help : r = (char)(i ^ k);
+        String result = "";
+        for (int i = 0; i < input.length(); i++)
+            result = result + (char)(input.charAt(i) ^ key.charAt(i%key.length()));
         return result;
     }
 
